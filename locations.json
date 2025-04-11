@@ -1,0 +1,88 @@
+ {
+    "locations": [
+        {
+            "name": "Berlin",
+            "embed": "https://www.google.com/maps/embed?pb=!4v1744295896843!6m8!1m7!1sglZDh8hj6FJLYF8JxZE1OQ!2m2!1d52.50872278390734!2d13.29361713926909!3f94.78355770786482!4f2.4413601362830377!5f0.7820865974627469",
+            "lat": 52.50872278390734,
+            "long": 13.29361713926909
+        },
+        {
+            "name": "Tokyo",
+            "embed": "https://www.google.com/maps/embed?pb=!4v1744378442568!6m8!1m7!1stgA8jmX4fUH3VmvWc3pFnw!2m2!1d35.6580501957168!2d139.7485859414566!3f253.1!4f6.260000000000005!5f0.7820865974627469",
+            "lat": 35.6580502,
+            "long": 139.7485859
+        },
+        {
+            "name": "New York",
+            "embed": "https://www.google.com/maps/embed?pb=!4v1744379035134!6m8!1m7!1s0GFP5TKzwyPL3OMSscP9fg!2m2!1d40.73183351545412!2d-73.61278333047272!3f75.29275!4f0!5f0.7820865974627469",
+            "lat": 40.7318335,
+            "long": -73.6127833
+        },
+        {
+            "name": "München",
+            "embed": "https://www.google.com/maps/embed?pb=!4v1744379100011!6m8!1m7!1s4jdLukh_gofnVFiHVcIOAg!2m2!1d48.21180803288651!2d11.53978161474962!3f186.15666!4f0!5f0.7820865974627469",
+            "lat": 48.211808,
+            "long": 11.5397816
+        },
+        {
+            "name": "Frankfurt",
+            "embed": "https://www.google.com/maps/embed?pb=!4v1744379151903!6m8!1m7!1sU9witvlX4cXZK6DBfoeh2g!2m2!1d50.19377695103903!2d8.659026984489818!3f11.011841!4f0!5f0.7820865974627469",
+            "lat": 50.193777,
+            "long": 8.659027
+        },
+        {
+            "name": "Moskau",
+            "embed": "https://www.google.com/maps/embed?pb=!4v1744379215884!6m8!1m7!1sgCT6lU77mDPtPXXI9S0cQA!2m2!1d55.76981379189786!2d37.55563073039583!3f317.37993555431194!4f-15.313747560232784!5f0.7820865974627469",
+            "lat": 55.7698138,
+            "long": 37.5556307
+        },
+        {
+            "name": "Paris",
+            "embed": "https://www.google.com/maps/embed?pb=!4v1744385691531!6m8!1m7!1sxOKd8xcoUzDBabPS4YtIcA!2m2!1d48.85665093387293!2d2.352211199194879!3f80.80123802496098!4f0!5f0.7820865974627469",
+            "lat": 35.6580502,
+            "long": 139.7485859
+        },
+        {
+            "name": "Madrid",
+            "embed": "https://www.google.com/maps/embed?pb=!4v1744385664576!6m8!1m7!1sh8TO-7Hf1DTs7UzV1mRfqw!2m2!1d40.41676916022874!2d-3.703843400720751!3f46.21010567260675!4f0!5f0.7820865974627469",
+            "lat": 35.6580502,
+            "long": 139.7485859
+        },
+        {
+            "name": "Rom",
+            "embed": "https://www.google.com/maps/embed?pb=!4v1744385752313!6m8!1m7!1sABFFomj0R1GnT9RbaKOLuA!2m2!1d41.90285600132413!2d12.49645871147514!3f177.90670714669577!4f0!5f0.7820865974627469",
+            "lat": 35.6580502,
+            "long": 139.7485859
+        },
+        {
+            "name": "Wien",
+            "embed": "https://www.google.com/maps/embed?pb=!4v1744385780872!6m8!1m7!1sbflmjwt17JKV7B6bU5HBkA!2m2!1d48.20827694310674!2d16.37402513035153!3f269.47576499612995!4f0!5f0.7820865974627469",
+            "lat": 35.6580502,
+            "long": 139.7485859
+        },
+        {
+            "name": "Prag",
+            "embed": "https://www.google.com/maps/embed?pb=!4v1744385810776!6m8!1m7!1svUOjW-Z5gT4DmT15io65Ww!2m2!1d50.07549336766893!2d14.43772920316258!3f96.6554862699425!4f0!5f0.7820865974627469",
+            "lat": 35.6580502,
+            "long": 139.7485859
+        },
+        {
+            "name": "Chicago",
+            "embed": "https://www.google.com/maps/embed?pb=!4v1744385831529!6m8!1m7!1sd2PIrRCT3EnI40prp_mOmA!2m2!1d41.87804003836944!2d-87.62976546339823!3f26.892296270169908!4f0!5f0.7820865974627469",
+            "lat": 35.6580502,
+            "long": 139.7485859
+        },
+        {
+            "name": "Dubai",
+            "embed": "https://www.google.com/maps/embed?pb=!4v1744385855897!6m8!1m7!1shbVChqCCN1jOCeLM7faZ5A!2m2!1d25.27617397061227!2d55.29659444399055!3f91.82363700591968!4f0!5f0.7820865974627469",
+            "lat": 35.6580502,
+            "long": 139.7485859
+        },
+        {
+            "name": "Kapstadt",
+            "embed": "https://www.google.com/maps/embed?pb=!4v1744385886864!6m8!1m7!1s2d2EJvnuOOMdAm0RHeZJfg!2m2!1d-33.92502392905056!2d18.42394889097508!3f104.18466285977631!4f0!5f0.7820865974627469",
+            "lat": 35.6580502,
+            "long": 139.7485859
+        }
+    ]
+ }
