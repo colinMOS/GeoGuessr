@@ -2,3 +2,12 @@
     width: 100px;
     height: 100px;
 }
+@font-face {
+    font-family: "Inter";
+    src: url("./Inter.woff") format("woff");
+}
+/* 
+$primary: #00A8E8; sky blue
+$secondary: #2E8B57; green 
+
+*/
