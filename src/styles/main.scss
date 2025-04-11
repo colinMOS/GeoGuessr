@@ -1,0 +1,141 @@
+.body {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Inter';
+}
+
+#Map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#info  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #1C1C1E;
+    font-family: 'Inter';
+    z-index: 2;
+    display: flex;
+}
+
+.info__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8px;
+}
+
+.info__title {
+    font-weight: bold;
+    font-size: 20px;
+}
+#info {
+    background: linear-gradient(270deg, #00A8E8, #00A8E8, #2E8B57);
+    background-size: 600% 600%;
+    animation: gradientShift 10s ease infinite;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    border-bottom-right-radius: 200px;
+    width: 200px;
+    padding: 20px 80px 30px 30px;
+    color: white;
+}
+
+.guessmap__wrapper {
+    position: fixed;
+    bottom: 2rem;
+    width: 300px;
+    height: 400px;
+    right: 5rem;
+}
+
+#GuessButton {
+    padding: 20px 40px;
+    border-radius: 60px;
+    background: green;
+    color: white;
+    font-weight: bold;
+    border: unset;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#GuessMap {
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+
+    &:hover {
+      &:after {
+        opacity: 0;
+        transition: 0.4s;
+      }
+    }
+
+    &.guessPlaced:after  {
+        opacity: 0;
+    }
+
+    &:after {
+      opacity: 1;
+      transition: 0.4s;
+      position: absolute;
+      content: 'Gib deinen Guess ab!';
+      height: -webkit-fill-available;
+      background: #00000073;
+      z-index: 999;
+      padding: 40% 20px;
+      color: white;
+      font-size: 30px;
+      text-align: center;
+      vertical-align: middle;
+    }
+}
+
+#ResultPanel {
+  position: fixed;
+  opacity: 0;
+  top: 10vh;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  background: #2E8B57;
+  border-radius: 30px;
+  height: 70vh;
+  transform: translate(-50%);
+  left: 50%;
+  padding: 40px;
+  color: white;
+  text-align: center;
+
+  &.show {
+    opacity: 1;
+  }
+
+}
+
+.panel {
+  &__header {
+    font-size: 45px;
+  }
+}
+
+  
+  /* Animation keyframes */
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  

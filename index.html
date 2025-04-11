@@ -6,11 +6,57 @@
     <title>Document</title>
     <!--ACHTUNG - DAS GEHT NUR WEGEN VITE! IN "ECHT" KANN KEIN TS IM BROWSER AUSGEFÜHRT WERDEN -->
     <script defer type="module" src="/src/index.ts"></script>
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
   </head>
 
-  <body>
-    <img class="small-image" src="/jslogo.png" alt="JavaScript Logo" />
-    <label for="myInput">Type something:</label>
-    <input name="myInput" type="text" id="myInput" />
+  <body class="body">
+    <iframe id="Map" src="https://www.google.com/maps/embed?pb=!4v1744295896843!6m8!1m7!1sglZDh8hj6FJLYF8JxZE1OQ!2m2!1d52.50872278390734!2d13.29361713926909!3f94.78355770786482!4f2.4413601362830377!5f0.7820865974627469"></iframe>
+    
+    <div id="info">
+      <div class="info__wrapper">
+        <span class="info__title">RUNDE</span>
+        <div class="info__round">
+          <span class="round">1</span>
+          <span>/ 3</span>
+        </div>
+      </div>
+      <div class="info__wrapper">
+        <span class="info__title">Score</span>
+        <span id="Score">0</span>
+      </div>
+    </div>
+    
+    <div class="guessmap__wrapper">
+      <button id="GuessButton" type="submit">GUESS</button>
+      <div id="GuessMap"></div>
+    </div>
+
+    <div id="ResultPanel">
+      <div class="panel__header">
+        <h2>RUNDE <span class="round">1</span></h2>
+      </div>
+      <div class="panel__map-wrapper">
+
+      </div>
+      <div class="panel__controls">
+        <div class="panel__stats">
+          <span>Der Abstand zwischen dem Ort und deinem Guess beträgt:</span>
+          <span id="getDistance"></span>
+          <span>km</span>
+        </div>
+
+        <div class="panel__button-wrapper">
+          <button type="submit" id="nextRound">Nächste Runde starten</button>
+        </div>
+      </div>
+    </div>
   </body>
+  <script  defer type="module"
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  ></script>
 </html>
