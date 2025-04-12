@@ -6,7 +6,7 @@
     height: 100vh;
     margin: 0;
     overflow: hidden;
-    font-family: 'Inter';
+    font-family: 'Default';
 }
 
 #Map {
@@ -20,7 +20,7 @@
     top: 0;
     left: 0;
     color: $dark;
-    font-family: 'Inter';
+    font-family: 'Default';
     z-index: 2;
     display: flex;
 }
@@ -56,6 +56,10 @@
     width: 300px;
     height: 400px;
     right: 5rem;
+
+    &:hover {
+      width: 500px;
+    }
   }
 
   &__toggle {
@@ -67,6 +71,10 @@
     width: 50vw;
     height: 90vh;
     bottom: 5rem;
+
+    &:hover {
+      width: 50vw;
+    }
 
     #GuessMap {
       height: -webkit-fill-available;
@@ -103,6 +111,7 @@
     transition: 0.4s;
     position: absolute;
     content: 'Gib deinen Guess ab!';
+    font-family: 'Default';
     height: -webkit-fill-available;
     left: 0;
     right: 0;
@@ -125,8 +134,8 @@
   display: none;
 
   &--end {
-    .panel__wrapper {
-      background-color: $primary !important;
+    .panel__header {
+      color: $secondary;
     }
   }
 
@@ -143,8 +152,15 @@
     margin: 5rem 0;
     margin-left: auto;
     margin-right: auto;
-    height: -webkit-fill-available;
     width: 80vw;
+
+    &--end {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      background-color: $primary--dark;
+      border-radius: 0;
+    }
   }
 
   &__header {
@@ -157,28 +173,38 @@
     margin-bottom: 60px;
   }
 
+  &__stats {
+    margin-bottom: 20px;
+  }
+
   &__button-wrapper {
     margin-top: 30px;
   }
 
-  .distance {
-    font-style: italic;
-    background: $dark;
-    padding: 5px 10px;
-    border-radius: 20px;
-    margin: 0 7px;
-    color: $yellow;
-  }
-
-  &__meme-wrapper {
+  &__image-wrapper {
     height: 300px;
     display: flex;
     justify-content: center;
+    margin-bottom: 5rem;
 
-    img, video {
+    img {
       height: 100%;
-      width: 100%;
+      width: auto;
     }
+  }
+}
+
+.marker {
+  font-style: italic;
+  background: $dark;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 0 2px;
+  color: $yellow;
+  font-size: 14px;
+
+  &--primary {
+    color: $primary;
   }
 }
 
@@ -210,11 +236,14 @@
   border: unset;
   cursor: pointer;
   color: white;
+  font-family: 'Default';
 
   &--secondary {
-    background-color: $tertiary;
+    color: $dark;
+    background-color: $secondary;
     &:hover {
-      background-color: $primary--dark;
+      color: white;
+      background-color: $tertiary;
     }
   }
 
