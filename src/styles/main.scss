@@ -1,3 +1,5 @@
+@import './styles';
+
 .body {
     position: fixed;
     width: 100vw;
@@ -17,7 +19,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    color: #1C1C1E;
+    color: $dark;
     font-family: 'Inter';
     z-index: 2;
     display: flex;
@@ -35,7 +37,7 @@
     font-size: 20px;
 }
 #info {
-    background: linear-gradient(270deg, #00A8E8, #00A8E8, #2E8B57);
+    background: linear-gradient(270deg, $primary, $primary--dark, $dark);
     background-size: 600% 600%;
     animation: gradientShift 10s ease infinite;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -57,16 +59,8 @@
   }
 
   &__toggle {
-    background: #1C1C1E;
-    border: unset;
-    color: white;
-    border-radius: 20px;
     margin-bottom: 10px;
-    padding: 10px 20px;
-
-    &:hover {
-      background: #00A8E8;
-    }
+    padding: 10px 20px !important;
   }
 
   &__tall {
@@ -81,56 +75,48 @@
 }
 
 #GuessButton {
-    padding: 20px 40px;
-    border-radius: 60px;
-    background: green;
-    color: white;
-    font-weight: bold;
-    border: unset;
-    width: fit-content;
-    margin-bottom: 20px;
-    cursor: pointer;
+  margin-bottom: 20px;
 
-    &:hover {
-      background: #00A8E8;
-    }
+  &:hover {
+    background-color: $tertiary;
+  }
 }
 
 #GuessMap {
-    width: 100%;
-    height: 350px;
-    border-radius: 20px;
+  width: 100%;
+  height: 350px;
+  border-radius: 20px;
 
-    &:hover {
-      &:after {
-        opacity: 0;
-        transition: 0.4s;
-      }
-    }
-
-    &.guessPlaced:after  {
-        opacity: 0;
-    }
-
+  &:hover {
     &:after {
-      opacity: 1;
+      opacity: 0;
       transition: 0.4s;
-      position: absolute;
-      content: 'Gib deinen Guess ab!';
-      height: -webkit-fill-available;
-      left: 0;
-      right: 0;
-      background: #00000073;
-      z-index: 999;
-      padding: 40% 20px;
-      color: white;
-      font-size: 30px;
-      text-align: center;
-      vertical-align: middle;
     }
+  }
+
+  &.guessPlaced:after  {
+      opacity: 0;
+  }
+
+  &:after {
+    opacity: 1;
+    transition: 0.4s;
+    position: absolute;
+    content: 'Gib deinen Guess ab!';
+    height: -webkit-fill-available;
+    left: 0;
+    right: 0;
+    background: #00000073;
+    z-index: 999;
+    padding: 40% 20px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+  }
 }
 
-#ResultPanel {
+.panel {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -138,57 +124,65 @@
   z-index: 2;
   display: none;
 
+  &--end {
+    .panel__wrapper {
+      background-color: $primary !important;
+    }
+  }
+
   &.show {
     display: block;
   }
 
+  &__wrapper {
+    background: $tertiary;
+    border-radius: 50px;
+    padding: 40px;
+    color: white;
+    text-align: center;
+    margin: 5rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: -webkit-fill-available;
+    width: 80vw;
+  }
+
+  &__header {
+    font-size: 45px;
+  }
+
+  &__map-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
+  &__button-wrapper {
+    margin-top: 30px;
+  }
+
+  .distance {
+    font-style: italic;
+    background: $dark;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin: 0 7px;
+    color: $yellow;
+  }
+
+  &__meme-wrapper {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+
+    img, video {
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
 
-.panel {
-    &__wrapper {
-      background: #2E8B57;
-      border-radius: 50px;
-      padding: 40px;
-      color: white;
-      text-align: center;
-      margin: 5rem 0;
-      margin-left: auto;
-      margin-right: auto;
-      height: -webkit-fill-available;
-      width: 80vw;
-    }
-
-    &__header {
-      font-size: 45px;
-    }
-
-    &__map-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 60px;
-    }
-
-    &__button-wrapper {
-      margin-top: 30px;
-    }
-
-    &__button {
-      width: fit-content;
-      padding: 20px 40px;
-      border-radius: 60px;
-      background: #00A8E8;
-      color: white;
-      font-weight: bold;
-      border: unset;
-      cursor: pointer;
-
-      &:hover {
-        background-color: #1C1C1E;
-      }
-    }
-}
-
-#ResultMap {
+#RoundMap {
   position: relative;
   height: 300px;
   width: 900px;
@@ -208,3 +202,34 @@
   }
 }
   
+.button {
+  width: fit-content;
+  padding: 20px 40px;
+  border-radius: 60px;
+  font-weight: bold;
+  border: unset;
+  cursor: pointer;
+  color: white;
+
+  &--secondary {
+    background-color: $tertiary;
+    &:hover {
+      background-color: $primary--dark;
+    }
+  }
+
+  &--primary {
+    background-color: $primary;
+    &:hover {
+      background-color: $primary--dark;
+    }
+  }
+
+  &--dark {
+    background-color: $dark;
+    &:hover {
+      background: $primary--dark;
+    }
+  }
+}
+
