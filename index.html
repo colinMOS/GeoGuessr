@@ -43,40 +43,57 @@
         <div class="panel__header">
             <h2>RUNDE <span class="round">1</span></h2>
         </div>
+        <div class="panel__stats">
+          <span class="marker marker--primary">
+            <span>+</span>
+            <span class="points"></span>
+            <span>Points</span>
+          </span>
+        </div>
         <div class="panel__map-wrapper">
           <div id="RoundMap"></div>
         </div>
         <div class="panel__controls">
           <div class="panel__stats">
-            <span>Dein Guess lag:</span>
-            <span class="distance"></span>
+            <span>Dein aktueller Score beträgt</span>
+            <span class="score marker"></span>
+            <span>Points</span>
+          </div>
+          <div class="panel__stats">
+            <span>Dein Guess lag</span>
+            <span class="distance marker"></span>
             <span>km vom richtigen Ort entfernt.</span>
           </div>
           
           <div class="panel__button-wrapper">
-            <button class="button button--secondary panel__button" type="submit" id="nextRound">Nächste Runde starten</button>
+            <button class="button button--primary panel__button" type="submit" id="nextRound">Nächste Runde starten</button>
           </div>
         </div>
       </div>
     </div>
 
     <div id="ResultPanel" class="panel panel--end">
-      <div class="panel__wrapper">
+      <div class="panel__wrapper panel__wrapper--end">
 
         <div class="panel__header">
             <h2>VICTORY</h2>
         </div>
-        <div class="panel__meme-wrapper">
-          <iframe id="Meme" src="./public/placeholder-meme.jpg"></iframe>
+        <div class="panel__image-wrapper">
+          <img class="panel__image" src="./public/person-1.png"></iframe>
+          <img class="panel__image" src="./public/person-2.png"></iframe>
+          <img class="panel__image" src="./public/person-3.png"></iframe>
         </div>
         <div class="panel__controls">
           <div class="panel__stats">
-            <span>Erreichte Punkte:</span>
-            <span class="score"></span>
+            <span>Dein Score:</span>
+            <span class="marker">
+              <span class="score">0</span>
+              <span>Points</span>
+            </span>
           </div>
           
           <div class="panel__button-wrapper">
-            <button class="button button--primary panel__button" type="submit" id="reloadGame">Neues Spiel starten</button>
+            <button class="button button--secondary panel__button" type="submit" id="reloadGame">Neues Spiel starten</button>
           </div>
         </div>
       </div>
