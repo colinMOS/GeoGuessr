@@ -1,6 +1,6 @@
 import L, { LatLng } from 'leaflet';
-import { roundPanel, setGuessMap } from './guessMap';
-import { showResults } from './result';
+import { roundPanel, setGuessMap } from './guess';
+import { showResults, changeNextButton } from './result';
 import location from '../locations.json';
 // exports
 export const textInput = document.querySelector('#map') as HTMLInputElement;
@@ -9,12 +9,13 @@ export let guessMap = L.map('GuessMap').setView([50, 50], 4);
 export const randomNumb: number = getRandomNumb();
 
 const Map = document.getElementById("Map") as HTMLIFrameElement | null;
-const nextButton = document.getElementById("nextRound");
+export const nextButton = document.getElementById("nextRound");
 export let round: number = 1;
 
 //THIS IS THE ENTRY FILE - WRITE YOUR MAIN LOGIC HERE
 changeMapLocation();
 setGuessMap();
+// playMusic();
 
 function getRandomNumb(): number {
     const randomNumb: number = Math.floor(Math.random() * locations.length);
@@ -36,9 +37,12 @@ export function getJsonCoords(randomNumb: number): {lat: number, lng: number} {
 
 nextButton?.addEventListener("click", function() {
     const roundTexts = document.querySelectorAll(".round");
+    guessMap.closePopup();
 
     round++;
-    if(round < 4) {   
+    if(round <= 3) {  
+        console.log("round"+ round);
+         
         roundPanel?.classList.remove("show");
         if (roundTexts) {
             roundTexts.forEach(text => {
@@ -46,24 +50,25 @@ nextButton?.addEventListener("click", function() {
             })
         }
         changeMapLocation();
+    } else {
+        showResults();
+    }
+    if(round > 2) {
+        changeNextButton();
     }
 })
 
 function changeMapLocation() {
-    console.log("Change Location");
     let number: number = getRandomNumb()
     if(Map) {
         Map.src = getJsonEmbed(number);
     }
 }
 
-function nextRound() {
-    // const roundNumber: String = document.getElementById("Round");
-    // for(let i = 1;i < 3;i++) {
-    //     roundNumber = i;
+function playMusic() {
+    const backgroundMusic: HTMLAudioElement = new Audio('./public/music.mp3');
 
-    //     if (i=3) {
-    //         const buttonText: string = "Spiel beenden";
-    //     }
-    // }
+    backgroundMusic.loop = true;
+    backgroundMusic.play(); 
+    backgroundMusic.volume = 0.3;
 }
