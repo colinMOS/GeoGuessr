@@ -6,3 +6,13 @@ $dark: #1A1A2E;
 $black: #10101C;
 $light: #D9D7F0;
 $yellow: #FECD19;
+
+@font-face {
+    font-family: "Default";
+    src: url("DynaPuff.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("./Inter.woff") format("woff");
+}
