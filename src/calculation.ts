@@ -26,7 +26,7 @@ export function checkDistance(coords1: { lat: number, lng: number }, coords2: L.
 }
 
 function showDistance(distance: string) {
-    const distText = document.getElementById("getDistance");
+    const distText = document.querySelector(".distance");
     if (distText) {
         distText.innerHTML = distance;
     }
@@ -41,7 +41,7 @@ function degreesToRadians(degrees: number): number {
 
 export function calcPoints(distance: number): number {
     let points: number = 0;
-    let score = document.getElementById("Score")
+    let Scores = document.querySelectorAll(".score")
 
     if (distance > 10000) {
         points = 50;
@@ -59,8 +59,10 @@ export function calcPoints(distance: number): number {
         points = 1000;
     }
 
-    if (score) {
-        score.innerHTML = points.toString();
+    if (Scores) {
+        Scores.forEach(score => {
+            score.innerHTML = points.toString();
+        })
     }
     return points;
 }

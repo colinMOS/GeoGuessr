@@ -1,16 +1,16 @@
 import L, { LatLng } from 'leaflet';
-import { resultPanel, setGuessMap } from './guessMap';
+import { roundPanel, setGuessMap } from './guessMap';
 import { showResults } from './result';
 import location from '../locations.json';
 // exports
 export const textInput = document.querySelector('#map') as HTMLInputElement;
+const locations = location.locations;
 export let guessMap = L.map('GuessMap').setView([50, 50], 4);
 export const randomNumb: number = getRandomNumb();
 
 const Map = document.getElementById("Map") as HTMLIFrameElement | null;
-const locations = location.locations;
 const nextButton = document.getElementById("nextRound");
-let round: number = 1;
+export let round: number = 1;
 
 //THIS IS THE ENTRY FILE - WRITE YOUR MAIN LOGIC HERE
 changeMapLocation();
@@ -35,26 +35,25 @@ export function getJsonCoords(randomNumb: number): {lat: number, lng: number} {
 }
 
 nextButton?.addEventListener("click", function() {
-    const roundText = document.querySelector(".round");
+    const roundTexts = document.querySelectorAll(".round");
 
     round++;
-    if(round <=3) {   
-        resultPanel?.classList.remove("show");
-        if (roundText) {
-            roundText.innerHTML = round.toString();
+    if(round < 4) {   
+        roundPanel?.classList.remove("show");
+        if (roundTexts) {
+            roundTexts.forEach(text => {
+                text.innerHTML = round.toString();
+            })
         }
         changeMapLocation();
-    } else {
-        showResults();
     }
-    
 })
 
 function changeMapLocation() {
     console.log("Change Location");
-
+    let number: number = getRandomNumb()
     if(Map) {
-        Map.src = getJsonEmbed(randomNumb);
+        Map.src = getJsonEmbed(number);
     }
 }
 

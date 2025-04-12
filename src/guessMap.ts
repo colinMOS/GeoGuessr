@@ -1,5 +1,5 @@
-import { guessMap, getJsonCoords, randomNumb } from './dom-utils'
-import { setResultMap } from './result'
+import { round, guessMap, getJsonCoords, randomNumb } from './dom-utils'
+import { setRoundMap, showResults } from './result'
 import L, { LatLng } from 'leaflet';
 const GuessMap = document.getElementById("GuessMap") as HTMLIFrameElement | null;
 
@@ -26,17 +26,19 @@ function placeGuess(e: L.LeafletMouseEvent): void {
 
     const guessedCoords = e.latlng;
     const jsonCoords = getJsonCoords(randomNumb);
-    setResultMap(jsonCoords, guessedCoords);
+    setRoundMap(jsonCoords, guessedCoords);
 
     // activate Guess Button
     GuessButton.removeAttribute("disabled");
 }
 
 const GuessButton = document.getElementById("GuessButton") as HTMLButtonElement;
-export const resultPanel = document.getElementById("ResultPanel")
+export const roundPanel = document.getElementById("roundPanel")
 GuessButton.addEventListener("click", function() {
-    resultPanel?.classList.add("show");
-    
+    roundPanel?.classList.add("show");
+    if (round === 3) {
+        showResults();
+    }
     // checkDistance(getJsonCoords(randomNumb), guessedCoords);
 })
 

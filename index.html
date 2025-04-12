@@ -27,34 +27,56 @@
       </div>
       <div class="info__wrapper">
         <span class="info__title">Score</span>
-        <span id="Score">0</span>
+        <span class="score">0</span>
       </div>
     </div>
     
     <div class="guessmap__wrapper">
-      <button class="guessmap__toggle">toggle map</button>
-      <button id="GuessButton" type="submit" disabled>GUESS</button>
+      <button class="button button--dark guessmap__toggle">toggle map</button>
+      <button id="GuessButton" class="button button--primary" type="submit" disabled>GUESS</button>
       <div id="GuessMap"></div>
     </div>
 
-    <div id="ResultPanel">
+    <div id="RoundPanel" class="panel">
       <div class="panel__wrapper">
 
         <div class="panel__header">
             <h2>RUNDE <span class="round">1</span></h2>
         </div>
         <div class="panel__map-wrapper">
-          <div id="ResultMap"></div>
+          <div id="RoundMap"></div>
         </div>
         <div class="panel__controls">
           <div class="panel__stats">
-            <span>Der Abstand zwischen dem Ort und deinem Guess beträgt:</span>
-            <span id="getDistance"></span>
-            <span>km</span>
+            <span>Dein Guess lag:</span>
+            <span class="distance"></span>
+            <span>km vom richtigen Ort entfernt.</span>
           </div>
           
           <div class="panel__button-wrapper">
-            <button class="panel__button" type="submit" id="nextRound">Nächste Runde starten</button>
+            <button class="button button--secondary panel__button" type="submit" id="nextRound">Nächste Runde starten</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="ResultPanel" class="panel panel--end">
+      <div class="panel__wrapper">
+
+        <div class="panel__header">
+            <h2>VICTORY</h2>
+        </div>
+        <div class="panel__meme-wrapper">
+          <iframe id="Meme" src="./public/placeholder-meme.jpg"></iframe>
+        </div>
+        <div class="panel__controls">
+          <div class="panel__stats">
+            <span>Erreichte Punkte:</span>
+            <span class="score"></span>
+          </div>
+          
+          <div class="panel__button-wrapper">
+            <button class="button button--primary panel__button" type="submit" id="reloadGame">Neues Spiel starten</button>
           </div>
         </div>
       </div>
