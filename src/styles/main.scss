@@ -46,12 +46,38 @@
     color: white;
 }
 
-.guessmap__wrapper {
+.guessmap {
+
+  &__wrapper {
     position: fixed;
     bottom: 2rem;
     width: 300px;
     height: 400px;
     right: 5rem;
+  }
+
+  &__toggle {
+    background: #1C1C1E;
+    border: unset;
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+
+    &:hover {
+      background: #00A8E8;
+    }
+  }
+
+  &__tall {
+    width: 50vw;
+    height: 90vh;
+    bottom: 5rem;
+
+    #GuessMap {
+      height: -webkit-fill-available;
+    }
+  }
 }
 
 #GuessButton {
@@ -61,8 +87,13 @@
     color: white;
     font-weight: bold;
     border: unset;
-    width: 100%;
+    width: fit-content;
     margin-bottom: 20px;
+    cursor: pointer;
+
+    &:hover {
+      background: #00A8E8;
+    }
 }
 
 #GuessMap {
@@ -87,6 +118,8 @@
       position: absolute;
       content: 'Gib deinen Guess ab!';
       height: -webkit-fill-available;
+      left: 0;
+      right: 0;
       background: #00000073;
       z-index: 999;
       padding: 40% 20px;
@@ -99,43 +132,79 @@
 
 #ResultPanel {
   position: fixed;
-  opacity: 0;
-  top: 10vh;
-  width: 70vw;
-  margin-left: auto;
-  margin-right: auto;
-  background: #2E8B57;
-  border-radius: 30px;
-  height: 70vh;
-  transform: translate(-50%);
-  left: 50%;
-  padding: 40px;
-  color: white;
-  text-align: center;
+  width: 100%;
+  height: 100%;
+  background: #00000082;
+  z-index: 2;
+  display: none;
 
   &.show {
-    opacity: 1;
+    display: block;
   }
 
 }
 
 .panel {
-  &__header {
-    font-size: 45px;
-  }
+    &__wrapper {
+      background: #2E8B57;
+      border-radius: 50px;
+      padding: 40px;
+      color: white;
+      text-align: center;
+      margin: 5rem 0;
+      margin-left: auto;
+      margin-right: auto;
+      height: -webkit-fill-available;
+      width: 80vw;
+    }
+
+    &__header {
+      font-size: 45px;
+    }
+
+    &__map-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+
+    &__button-wrapper {
+      margin-top: 30px;
+    }
+
+    &__button {
+      width: fit-content;
+      padding: 20px 40px;
+      border-radius: 60px;
+      background: #00A8E8;
+      color: white;
+      font-weight: bold;
+      border: unset;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #1C1C1E;
+      }
+    }
+}
+
+#ResultMap {
+  position: relative;
+  height: 300px;
+  width: 900px;
 }
 
   
-  /* Animation keyframes */
-  @keyframes gradientShift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+/* Animation keyframes */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
   }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
   

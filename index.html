@@ -32,26 +32,30 @@
     </div>
     
     <div class="guessmap__wrapper">
-      <button id="GuessButton" type="submit">GUESS</button>
+      <button class="guessmap__toggle">toggle map</button>
+      <button id="GuessButton" type="submit" disabled>GUESS</button>
       <div id="GuessMap"></div>
     </div>
 
     <div id="ResultPanel">
-      <div class="panel__header">
-        <h2>RUNDE <span class="round">1</span></h2>
-      </div>
-      <div class="panel__map-wrapper">
+      <div class="panel__wrapper">
 
-      </div>
-      <div class="panel__controls">
-        <div class="panel__stats">
-          <span>Der Abstand zwischen dem Ort und deinem Guess beträgt:</span>
-          <span id="getDistance"></span>
-          <span>km</span>
+        <div class="panel__header">
+            <h2>RUNDE <span class="round">1</span></h2>
         </div>
-
-        <div class="panel__button-wrapper">
-          <button type="submit" id="nextRound">Nächste Runde starten</button>
+        <div class="panel__map-wrapper">
+          <div id="ResultMap"></div>
+        </div>
+        <div class="panel__controls">
+          <div class="panel__stats">
+            <span>Der Abstand zwischen dem Ort und deinem Guess beträgt:</span>
+            <span id="getDistance"></span>
+            <span>km</span>
+          </div>
+          
+          <div class="panel__button-wrapper">
+            <button class="panel__button" type="submit" id="nextRound">Nächste Runde starten</button>
+          </div>
         </div>
       </div>
     </div>
