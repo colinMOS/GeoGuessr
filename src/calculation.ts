@@ -1,7 +1,10 @@
 let totalScore = 0;
 const R = 6371; // Earth's radius in km
 
-export function checkDistance(coords1: { lat: number, lng: number }, coords2: L.LatLng): string {   
+export function checkDistance(
+    coords1: { lat: number, lng: number }, 
+    coords2: L.LatLng
+): string {   
     // Convert degrees to radians
     const lat1 = degreesToRadians(coords1.lat);
     const lon1 = degreesToRadians(coords1.lng);
@@ -19,7 +22,8 @@ export function checkDistance(coords1: { lat: number, lng: number }, coords2: L.
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const distance = R * c; // Distance in km
     const distanceRound = distance.toFixed(2);
-    showDistance(distanceRound)
+
+    showDistance(distanceRound);
     calcPoints(distance);
     
     return distanceRound;
@@ -27,6 +31,7 @@ export function checkDistance(coords1: { lat: number, lng: number }, coords2: L.
 
 function showDistance(distance: string) {
     const distanceText = document.querySelector(".distance");
+
     if (distanceText) {
         distanceText.innerHTML = distance;
     }
