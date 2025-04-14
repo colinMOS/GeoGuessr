@@ -72,7 +72,3 @@ export function calcPoints(distance: number): void {
     if (pointText) 
         pointText.innerHTML = points.toString();
 }
-
-export function getTotalScore(): number {
-    return totalScore;
-}

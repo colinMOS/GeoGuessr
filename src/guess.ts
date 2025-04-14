@@ -11,8 +11,7 @@ export let guessedCoords: L.LatLng | null = null;
 toggleGuessMap();
 
 export function setGuessMap(): void {
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(guessMap);
-    guessMap.on('click', placeGuess);
+    guessMap.on('click', placeGuess) && setTimeout(() => guessMap.invalidateSize(), 800);
 }
 
 function placeGuess(e: L.LeafletMouseEvent): void {
