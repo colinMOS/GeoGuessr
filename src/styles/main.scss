@@ -1,4 +1,5 @@
 @import './styles';
+@import './button';
 
 .body {
     position: fixed;
@@ -158,7 +159,9 @@
       width: 100vw;
       height: 100vh;
       margin: 0;
-      background-color: $primary--dark;
+      background: linear-gradient(270deg, $primary, $primary--dark, $primary);
+      background-size: 600% 600%;
+      animation: gradientShift 10s ease infinite;
       border-radius: 0;
     }
   }
@@ -228,46 +231,3 @@
   }
 }
   
-.button {
-  width: fit-content;
-  padding: 20px 40px;
-  border-radius: 60px;
-  font-weight: bold;
-  border: unset;
-  cursor: pointer;
-  color: white;
-  font-family: 'Default';
-  box-shadow: 0 0.275rem 1.125rem rgb(0 0 0 / 25%), inset 0 0.0625rem 0 hsla(0, 0%, 100%, .2), inset 0 -0.125rem 0 rgb(0 0 0 / 30%);
-
-  &--secondary {
-    color: $dark;
-    background-color: $secondary;
-    &:hover {
-      color: white;
-      transform: scale(1.05);
-    }
-  }
-
-  &--primary {
-    background-color: $primary;
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-
-  &--dark {
-    background-color: $dark;
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-
-  &--tertiary {
-    background: linear-gradient($tertiary--light, $tertiary--dark);
-
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-}
-
