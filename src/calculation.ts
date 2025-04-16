@@ -5,14 +5,15 @@ export function checkDistance(
     coords1: { lat: number, lng: number }, 
     coords2: L.LatLng
 ): string {   
+    
     // Convert degrees to radians
-    const lat1 = degreesToRadians(coords1.lat);
-    const lon1 = degreesToRadians(coords1.lng);
-    const lat2 = degreesToRadians(coords2.lat);
-    const lon2 = degreesToRadians(coords2.lng);
+    const lat1 : number = degreesToRadians(coords1.lat);
+    const lon1 : number = degreesToRadians(coords1.lng);
+    const lat2 : number = degreesToRadians(coords2.lat);
+    const lon2 : number = degreesToRadians(coords2.lng);
 
-    const diffLat = lat2 - lat1;
-    const diffLon = lon2 - lon1;
+    const diffLat : number = lat2 - lat1;
+    const diffLon : number = lon2 - lon1;
 
     const a =
         Math.sin(diffLat / 2) * Math.sin(diffLat / 2) +
@@ -22,15 +23,15 @@ export function checkDistance(
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const distance = R * c; // Distance in km
     const distanceRound = distance.toFixed(2);
-
+    
     showDistance(distanceRound);
     calcPoints(distance);
     
     return distanceRound;
 }
 
-function showDistance(distance: string) {
-    const distanceText = document.querySelector(".distance");
+function showDistance(distance: string) : void {
+    const distanceText : HTMLElement | null = document.querySelector(".distance");
 
     if (distanceText) {
         distanceText.innerHTML = distance;
@@ -44,8 +45,8 @@ function degreesToRadians(degrees: number): number {
 
 export function calcPoints(distance: number): void {
     let points: number = 0;
-    let pointText = document.querySelector(".points");
-    let ScoreTexts = document.querySelectorAll(".score");
+    let pointText = document.querySelector(".points") as HTMLElement | null;
+    let ScoreTexts = document.querySelectorAll(".score") as NodeListOf<HTMLElement>;
 
     if (distance > 10000) {
         points += 50;

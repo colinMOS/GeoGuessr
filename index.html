@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GeoGuessr!</title>
     <!--ACHTUNG - DAS GEHT NUR WEGEN VITE! IN "ECHT" KANN KEIN TS IM BROWSER AUSGEFÜHRT WERDEN -->
-    <link rel="icon" href="./public/pin.png" type="image/x-icon" />
+    <link rel="icon" href="./pin.png" type="image/x-icon" />
     <script defer type="module" src="/src/index.ts"></script>
     <link rel="stylesheet" href="./src/styles/styles.css" />
     <link rel="stylesheet" href="./src/styles/main.css" />
@@ -80,9 +80,9 @@
             <h2>VICTORY</h2>
         </div>
         <div class="panel__image-wrapper">
-          <img class="panel__image" src="./public/person-1.png"></iframe>
-          <img class="panel__image" src="./public/person-2.png"></iframe>
-          <img class="panel__image" src="./public/person-3.png"></iframe>
+          <img class="panel__image" src="./person-1.png"></iframe>
+          <img class="panel__image" src="./person-2.png"></iframe>
+          <img class="panel__image" src="./person-3.png"></iframe>
         </div>
         <div class="panel__controls">
           <div class="panel__stats">
@@ -100,7 +100,8 @@
       </div>
     </div>
   </body>
-  <script  defer type="module"
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  ></script>
+  
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
 </html>

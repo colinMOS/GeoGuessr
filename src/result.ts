@@ -1,9 +1,6 @@
-import { roundPanel } from './guess';
-import { nextButton } from './dom-utils';
+import { nextButton, roundPanel, resultPanel } from './index';
 
-const resultPanel = document.getElementById("ResultPanel");
-
-export function changeNextButton() {
+export function changeNextButton(): void {
     if (nextButton) {
         nextButton.innerHTML = "Ergebnisse ansehen";
         nextButton.style.background = "#FFA43D";
@@ -11,7 +8,7 @@ export function changeNextButton() {
     }
 }
 
-export function showResults() {
+export function showResults(): void {
     // hide roundPanel
     roundPanel?.classList.remove("show");
     // show resultPanel
