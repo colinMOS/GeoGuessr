@@ -8,6 +8,10 @@
     margin: 0;
     overflow: hidden;
     font-family: 'Default';
+
+    @media (max-width: 1299px) {
+        font-size: 14px;
+    }
 }
 
 #Map {
@@ -24,6 +28,10 @@
     font-family: 'Default';
     z-index: 2;
     display: flex;
+
+    @media(max-width: 1299px) {
+      padding: 10px 40px 15px 15px;
+    }
 }
 
 .info__wrapper {
@@ -47,6 +55,10 @@
     width: 200px;
     padding: 20px 80px 30px 30px;
     color: white;
+
+    @media (max-width: 1299px) {
+      padding: 10px 40px 15px 15px;
+    }
 }
 
 .guessmap {
@@ -72,6 +84,11 @@
     width: 50vw;
     height: 90vh;
     bottom: 5rem;
+
+    @media (max-width: 1299px) {
+      bottom: 5rem;
+      height: 80vh;
+    }
 
     &:hover {
       width: 50vw;
@@ -155,6 +172,12 @@
     margin-right: auto;
     width: 80vw;
 
+    @media (max-width: 1299px) {
+      margin-top: 1rem ;
+      margin-bottom: 1rem ;
+      padding: 20px;
+    }
+
     &--end {
       width: 100vw;
       height: 100vh;
@@ -168,12 +191,20 @@
 
   &__header {
     font-size: 45px;
+    
+    @media (max-width: 1299px) {
+      font-size: 30px;
+    }
   }
 
   &__map-wrapper {
     display: flex;
     justify-content: center;
     margin-bottom: 60px;
+
+    @media (max-width: 1299px) {
+      margin-bottom: 20px;
+    }
   }
 
   &__stats {
@@ -215,6 +246,11 @@
   position: relative;
   height: 300px;
   width: 900px;
+
+  @media (max-width: 1299px) {
+    height: 200px;
+    width: 500px;
+  }
 }
 
   
