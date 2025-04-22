@@ -1,5 +1,14 @@
-let totalScore = 0;
+import { DISTANCE_EL, POINTS_EL, SCORE_EL } from "./dom-utils";
+
 const R = 6371; // Earth's radius in km
+
+const POINTS_OVER_10000: number =   50;
+const POINTS_OVER_5000: number  =  200;
+const POINTS_OVER_3000: number  =  300;
+const POINTS_OVER_2000: number  =  400;
+const POINTS_OVER_1000: number  =  500;
+const POINTS_OVER_100: number   =  900;
+const POINTS_OVER_50: number    = 1000;
 
 export function checkDistance(
     coords1: { lat: number, lng: number }, 
@@ -31,10 +40,8 @@ export function checkDistance(
 }
 
 function showDistance(distance: string) : void {
-    const distanceText : HTMLElement | null = document.querySelector(".distance");
-
-    if (distanceText) {
-        distanceText.innerHTML = distance;
+    if (DISTANCE_EL) {
+        DISTANCE_EL.innerHTML = distance;
     }
 }
 
@@ -44,32 +51,31 @@ function degreesToRadians(degrees: number): number {
 }
 
 export function calcPoints(distance: number): void {
+    let totalScore = 0;
     let points: number = 0;
-    let pointText = document.querySelector(".points") as HTMLElement | null;
-    let ScoreTexts = document.querySelectorAll(".score") as NodeListOf<HTMLElement>;
 
     if (distance > 10000) {
-        points += 50;
+        points += POINTS_OVER_10000;
     } else if (distance > 5000) {
-        points += 200;
+        points += POINTS_OVER_5000;
     } else if (distance > 3000) {
-        points += 300;
+        points += POINTS_OVER_3000;
     } else if (distance > 2000) {
-        points += 400;
+        points += POINTS_OVER_2000;
     } else if (distance >= 1000) {
-        points += 500;
+        points += POINTS_OVER_1000;
     } else if (distance >= 100) {
-        points += 900;
+        points += POINTS_OVER_100;
     } else if (distance >= 50) {
-        points += 1000;
+        points += POINTS_OVER_50;
     }
     totalScore += points;
     
-    if (ScoreTexts)
-        ScoreTexts.forEach(scoreText => {
+    if (SCORE_EL)
+        SCORE_EL.forEach(scoreText => {
             scoreText.innerHTML = totalScore.toString();
         })
             
-    if (pointText) 
-        pointText.innerHTML = points.toString();
+    if (POINTS_EL) 
+        POINTS_EL.innerHTML = points.toString();
 }
