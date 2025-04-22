@@ -38,10 +38,12 @@ export const resultPanel    = document.getElementById("ResultPanel") as HTMLDivE
 
 /// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // Functions
-document.addEventListener("DOMContentLoaded", () => {
+function startApp() {
     changeMapLocation();
     setGuessMap();
     clickNextRound();
     reloadGame();
     toggleGuessMap();
-});
+}
+
+startApp();
