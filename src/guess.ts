@@ -1,54 +1,45 @@
 import { MAP_GUESS_EL, BUTTON_GUESS, PANEL_ROUND, BUTTON_TOGGLE_GUESS, MAP_GUESS_WRAPPER } from './dom-utils';
-import { guessMap, locations } from './index';
-import { loadRoundMap } from './basic';
-import { checkDistance } from './calculation';
-import L from 'leaflet';
-
-let guessedCoords: L.LatLng | null                  = null;
-let jsonCoords: { lat: number, lng: number } | null = null;
-let guessButtonClickListener: (() => void) | null   = null;
+import { randomNumb, guessMap }         from './index';
+import { getJsonCoords, loadRoundMap }  from './basic';
+import { checkDistance }                from './calculation';
+import L                                from 'leaflet';
 
 export function setGuessMap(): void {
-    guessMap.on('click', (e: L.LeafletMouseEvent) => placeGuess(e.latlng));
-    setTimeout(() => guessMap.invalidateSize(), 800);
+    guessMap.on('click', placeGuess) && setTimeout(() => guessMap.invalidateSize(), 800);
 }
 
-function placeGuess(latlng: L.LatLng): void {
-    MAP_GUESS_EL.classList.add("guessPlaced");
+function placeGuess(e: L.LeafletMouseEvent): void {
+    MAP_GUESS_EL?.classList.add("guessPlaced");
 
     const popup = L.popup()
-        .setLatLng(latlng)
+
+    popup
+        .setLatLng(e.latlng)
         .setContent("Dein Guess wurde gesetzt!")
         .openOn(guessMap);
 
-    guessedCoords = latlng;
-    const randomLocation    = locations[Math.floor(Math.random() * locations.length)];
-    jsonCoords              = { lat: randomLocation.lat, lng: randomLocation.long };
-
+    let guessedCoords   : L.LatLng = e.latlng;
+    let jsonCoords      : L.LatLng = L.latLng(  getJsonCoords(randomNumb).lat, 
+                                                getJsonCoords(randomNumb).lng
+                                            );
     loadRoundMap(jsonCoords, guessedCoords);
-
-    BUTTON_GUESS.removeAttribute("disabled");
-    setupGuessButtonListener(); 
+    
+    // activate Guess Button
+    BUTTON_GUESS?.removeAttribute("disabled");
+    clickGuessButton(guessedCoords, jsonCoords);
 }
 
-function setupGuessButtonListener(): void {
-    if (!guessButtonClickListener) {
-        guessButtonClickListener = () => {
-            PANEL_ROUND.classList.add("show");
-
-            if (guessedCoords && jsonCoords) {
-                checkDistance(
-                    { lat: jsonCoords.lat, lng: jsonCoords.lng },
-                    guessedCoords
-                );
-            }
-        };
-        BUTTON_GUESS.addEventListener("click", (e: MouseEvent) => guessButtonClickListener);
-    }
+function clickGuessButton(coordsGuess: L.LatLng, coordsTrue : L.LatLng): void {
+    BUTTON_GUESS?.addEventListener("click", function() {
+        PANEL_ROUND?.classList.add("show");
+        if (coordsTrue && coordsGuess) {
+            checkDistance(coordsGuess, coordsTrue);
+        }
+    })
 }
 
 export function toggleGuessMap(): void {
-    BUTTON_TOGGLE_GUESS.addEventListener("click", function (e: MouseEvent) {
-        MAP_GUESS_WRAPPER.classList.toggle("guessmap__tall");
-    });
+    BUTTON_TOGGLE_GUESS?.addEventListener("click", function() {
+        MAP_GUESS_WRAPPER?.classList.toggle("guessmap__tall")
+    })
 }

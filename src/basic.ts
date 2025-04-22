@@ -1,7 +1,7 @@
 import { MAP_STREETVIEW, NEXT_BUTTON, PANEL_ROUND, ROUND_ELEMENTS, RELOAD } from './dom-utils';
-import L from 'leaflet';
-import { showResults, changeNextButton } from './result';
-import { locations, guessMap, pinIcon, pinIcon2 } from './index';
+import L                                            from 'leaflet';
+import { showResults, changeNextButton }            from './result';
+import { locations, guessMap, pinIcon, pinIcon2 }   from './index';
 
 let roundMap : L.Map;
 
