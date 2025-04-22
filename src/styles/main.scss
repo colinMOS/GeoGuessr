@@ -1,5 +1,5 @@
-@import './styles';
-@import './button';
+@use './styles' as *;
+@use './button' as but;
 
 .body {
     position: fixed;
