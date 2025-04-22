@@ -99,7 +99,7 @@ function setRoundMap(coords1: { lat: number, lng: number }): void {
             zoomControl: true,
             layers: [createTileLayer()],
             minZoom: 2,
-            maxZoom: 2,
+            maxZoom: 6,
         })
         .setView([coords1.lat, coords1.lng], 12);
 }
@@ -126,6 +126,8 @@ export function loadRoundMap(
         roundMap.invalidateSize();
         fitMapToBounds(roundMap, coords1, coords2);
     });
+
+    window.dispatchEvent(new Event('resize'));
 }
 
 export function reloadGame(): void {

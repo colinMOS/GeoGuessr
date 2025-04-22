@@ -36,6 +36,7 @@ export function checkDistance(
     showDistance(distanceRound);
     calcPoints(distance);
     
+    window.dispatchEvent(new Event('resize')); 
     return distanceRound;
 }
 

@@ -41,5 +41,7 @@ function clickGuessButton(coordsGuess: L.LatLng, coordsTrue : L.LatLng): void {
 export function toggleGuessMap(): void {
     BUTTON_TOGGLE_GUESS?.addEventListener("click", function() {
         MAP_GUESS_WRAPPER?.classList.toggle("guessmap__tall")
+
+        window.dispatchEvent(new Event('resize'));
     })
 }
