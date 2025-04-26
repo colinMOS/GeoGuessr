@@ -9,8 +9,8 @@
         {
             "name": "Tokyo",
             "embed": "https://www.google.com/maps/embed?pb=!4v1744378442568!6m8!1m7!1stgA8jmX4fUH3VmvWc3pFnw!2m2!1d35.6580501957168!2d139.7485859414566!3f253.1!4f6.260000000000005!5f0.7820865974627469",
-            "lat": 35.6580502,
-            "long": 139.7485859
+            "lat": 41.9028,
+            "long": 12.4964
         },
         {
             "name": "New York",
@@ -39,32 +39,32 @@
         {
             "name": "Paris",
             "embed": "https://www.google.com/maps/embed?pb=!4v1744385691531!6m8!1m7!1sxOKd8xcoUzDBabPS4YtIcA!2m2!1d48.85665093387293!2d2.352211199194879!3f80.80123802496098!4f0!5f0.7820865974627469",
-            "lat": 35.6580502,
-            "long": 139.7485859
+            "lat": 48.8566,
+            "long": 2.3522
         },
         {
             "name": "Madrid",
             "embed": "https://www.google.com/maps/embed?pb=!4v1744385664576!6m8!1m7!1sh8TO-7Hf1DTs7UzV1mRfqw!2m2!1d40.41676916022874!2d-3.703843400720751!3f46.21010567260675!4f0!5f0.7820865974627469",
-            "lat": 35.6580502,
-            "long": 139.7485859
+            "lat": 48.208176,
+            "long": 16.373819
         },
         {
             "name": "Rom",
             "embed": "https://www.google.com/maps/embed?pb=!4v1744385752313!6m8!1m7!1sABFFomj0R1GnT9RbaKOLuA!2m2!1d41.90285600132413!2d12.49645871147514!3f177.90670714669577!4f0!5f0.7820865974627469",
-            "lat": 35.6580502,
-            "long": 139.7485859
+            "lat": 25.276987,
+            "long": 55.296249
         },
         {
             "name": "Wien",
             "embed": "https://www.google.com/maps/embed?pb=!4v1744385780872!6m8!1m7!1sbflmjwt17JKV7B6bU5HBkA!2m2!1d48.20827694310674!2d16.37402513035153!3f269.47576499612995!4f0!5f0.7820865974627469",
-            "lat": 35.6580502,
-            "long": 139.7485859
+            "lat": -33.9249,
+            "long": 18.4241
         },
         {
             "name": "Prag",
             "embed": "https://www.google.com/maps/embed?pb=!4v1744385810776!6m8!1m7!1svUOjW-Z5gT4DmT15io65Ww!2m2!1d50.07549336766893!2d14.43772920316258!3f96.6554862699425!4f0!5f0.7820865974627469",
-            "lat": 35.6580502,
-            "long": 139.7485859
+            "lat": 50.0755,
+            "long": 14.4378
         },
         {
             "name": "Chicago",

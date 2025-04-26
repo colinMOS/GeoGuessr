@@ -32,7 +32,7 @@ export function clickNextRound() : void {
         guessMap.closePopup();
         roundMap?.closePopup();
         
-        round++;;
+        round++;
         if(round <= 3) {  
             
             PANEL_ROUND?.classList.remove("show");
@@ -115,8 +115,9 @@ export function loadRoundMap(
    
     setRoundMap(coords1);
 
-    if (!roundMap) 
-        { throw new Error("RoundMap not found!"); }
+    if (!roundMap) { 
+        throw new Error("RoundMap not found!"); 
+    }
 
     const targetMarker = createTargetMarker(coords1).addTo(roundMap);
     const guessMarker  = createGuessMarker(coords2).addTo(roundMap);
